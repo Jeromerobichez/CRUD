@@ -36,6 +36,39 @@ require("../../pages/connect.php");
     </a>
 </button>
 <h2>  Liste des véhicules existants :   </h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Van numéro</th>
+            <th>Model</th>
+            <th>Contenance du réservoir</th>
+            <th>Tailles des pneus</th>
+            <th>Nombres de places</th>
+            <th>ID du véhicule</th>
+            <th>KM parcourus</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($connexion->query($sql) as $row){ ?>
+            <tr>
+                <td><?=$row['v_id'] ?></td>
+                <td><?=$row['model'] ?></td>
+                <td><?=$row['tank'] ?> litres</td>
+                <td><?=$row['tires'] ?></td>
+                <td><?=$row['pax'] ?></td>
+                <td><?=$row['v_id'] ?></td>
+                <td><?=$row['km'] ?> km</td>
+                <td>
+                    <a href="update.php?id=<?= $row['v_id'] ?>" class="btn btn-primary">Modifier le véhicule</a>
+                    <a href="delete.php?id=<?= $row['v_id'] ?>" class="btn btn-danger">Supprimer le véhicule</a>
+                </td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
 <?php foreach ($connexion->query($sql) as $row){ ?>
     <div class="border border-3 border-dark rounded-2 w-50 m-2 bg-warning p-2"> 
         <h3> Van numéro : <span class="bg-primary border rounded-2 px-2"> <?=$row['v_id'] ?> </span></h3>

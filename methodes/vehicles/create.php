@@ -32,22 +32,45 @@ $modelValues = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<html><div class="content update">
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<div class="content update">
 	<h2>Create Contact</h2>
-    <form action="create.php" method="post">
+    <form action="create.php" method="post"
+    class="border border-3 border-dark rounded-2 w-50 m-2 bg-warning p-2">
+<div class="d-flex justify-content-between">
+    <span>
         <label for="model">Model</label>
+</span>
+<span>
         <select name="model" id="model">
+
         <?php foreach ($modelValues as $value) {
     ?> <option value="<?=$value['id']?>"><?=$value['model']?> </option>
   <?php } ?>
 </select>
-        <label for="color">Color</label>
+        </span>
+        </div>
+
+<div class="d-flex justify-content-between">
+<span>
+        <label for="color">Color</label> </span>
+        <span>
         <select name="color" id="color">
+
         <?php foreach ($enumValues[1] as $value) {
   ?> <option value="<?=$value?>"><?=$value?> </option>
 <?php } ?> </select>
-        <label for="km">Km</label>
+        </span>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <span>
+        <label for="km">Km</label> </span>
+        <span>
         <input type="text" name="km" placeholder="30" id="km">
+        </span>
+        </div>
         <input type="submit" value="Create">
     </form>
     <?php if ($msg): ?>
