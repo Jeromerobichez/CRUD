@@ -42,6 +42,7 @@ require("../../pages/connect.php");
         <tr>
             <th>Van numéro</th>
             <th>Model</th>
+            <th>Couleur</th>
             <th>Contenance du réservoir</th>
             <th>Tailles des pneus</th>
             <th>Nombres de places</th>
@@ -55,14 +56,17 @@ require("../../pages/connect.php");
             <tr>
                 <td><?=$row['v_id'] ?></td>
                 <td><?=$row['model'] ?></td>
+                <td><?=$row['color'] ?></td>
                 <td><?=$row['tank'] ?> litres</td>
                 <td><?=$row['tires'] ?></td>
                 <td><?=$row['pax'] ?></td>
                 <td><?=$row['v_id'] ?></td>
                 <td><?=$row['km'] ?> km</td>
                 <td>
-                    <a href="update.php?id=<?= $row['v_id'] ?>" class="btn btn-primary">Modifier le véhicule</a>
-                    <a href="delete.php?id=<?= $row['v_id'] ?>" class="btn btn-danger">Supprimer le véhicule</a>
+                <div class="mt-2">
+<button type="button" class=" border border-primary border-2 rounded-2"> <a class="text-decoration-none" href="update.php?id=<?= $row['v_id'] ?>"> Modifier le véhicule </a></button>
+<button type="button" class=" border border-danger border-2 rounded-2"> <a class="text-danger text-decoration-none" href="delete.php?id=<?= $row['v_id'] ?>"> Supprimer le véhicule </a></button>
+</div>
                 </td>
             </tr>
         <?php } ?>
@@ -74,6 +78,8 @@ require("../../pages/connect.php");
         <h3> Van numéro : <span class="bg-primary border rounded-2 px-2"> <?=$row['v_id'] ?> </span></h3>
 <div>        
 <span class="">Model : </span> <span class="text-primary fw-bold py-1 px-2"><?=$row['model'] ?> </span> </div>
+<div>        
+<span class="">Couleur : </span> <span class="text-primary fw-bold py-1 px-2"><?=$row['color'] ?> </span> </div>
 <div><span> Contenance du réservoir : </span> <span class="text-primary fw-bold"> <?=$row['tank'] ?> litres </span> </div>
 <div><span> Tailles des pneus :</span> <span class="text-primary fw-bold"> <?=$row['tires'] ?> </span> </div>
 <div><span> Nombres de places :</span> <span class="text-primary fw-bold"> <?=$row['pax'] ?></span> </div>

@@ -28,12 +28,25 @@ if (isset($_GET)) {
 } else {
     exit('No ID specified!');
 }
+
+$sql3=" SELECT id, model
+FROM car_model
+";
+
+$stmt3 = $pdo->query($sql3);
+$carValues = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+var_dump($carValues[1])
 ?>
 
 <html>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <div>
+<div>
+<?php foreach ($carValues as $value) {
+?> <div> <?php var_dump($value['model']) ?> </div>
+<?php } ?>
+</div> 
     <h1>Modification d'un véhicule : </h1>
     <form action="update.php?id=<?= $id ?>" method="post"
     class="border border-3 border-dark rounded-2 w-50 m-2 bg-warning p-2">
