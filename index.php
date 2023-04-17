@@ -36,7 +36,7 @@ else{
 </div>
 <div class="d-flex justify-content-center mt-4">
 <table class="border border-3 border-black w-75 ">
-<tr class="bg-info"> <td class="border p-3 w-50 text-center"> <strong> model </strong> </td> <td class="border p-3 w-50 text-center"> nombres de places </td></tr>
+<tr class="bg-primary"> <td class="border p-3 w-50 text-center"> <strong> model </strong> </td> <td class="border p-3 w-50 text-center"> nombres de places </td></tr>
 <?php
   foreach ($connexion->query($sql) as $row)
 
@@ -54,11 +54,21 @@ echo "<tr >
 </div>
 <?php } ?>
 <html>
+<div class="d-flex justify-content-around border border-3 border-dark m-5">
+<h2 class="mt-2">
+    Créer un nouveau véhicule : 
+</h2>
+<button type="button" class="bg-success border border-2 border-dark rounded-3 p-2 m-2">
+    <a class="text-decoration-none text-light " href="./methodes/vehicles/create.php">
+        Créer un nouveau véhicule 
+    </a>
+</button>
+      </div>
   <div class="d-flex justify-content-center">
 <h2 class="mt-4">
   <a href="methodes/vehicles/read.php"> 
-    <button class="bg-info border border-secondary rounded-2 p-2">
-     Voir la liste des véhicules 
+    <button class="bg-primary border border-secondary rounded-2 p-2">
+     Voir la liste des véhicules existants
 </button>
   </a>
 </h2>

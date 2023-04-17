@@ -38,7 +38,7 @@ require("../../pages/connect.php");
 <h2>  Liste des véhicules existants :   </h2>
 
 <table class="table">
-    <thead>
+    <thead class="bg-secondary">
         <tr>
             <th>Van numéro</th>
             <th>Model</th>
@@ -53,10 +53,10 @@ require("../../pages/connect.php");
     </thead>
     <tbody>
         <?php foreach ($connexion->query($sql) as $row){ ?>
-            <tr>
-                <td><?=$row['v_id'] ?></td>
-                <td><?=$row['model'] ?></td>
-                <td><?=$row['color'] ?></td>
+            <tr class="align-middle text-center">
+                <td ><span class="p-2 bg-primary border border-dark border-2 rounded-2 text-light"><?=$row['v_id'] ?> </span></td>
+                <td class=""><?=$row['model'] ?></td>
+                <td class=""><?=$row['color'] ?></td>
                 <td><?=$row['tank'] ?> litres</td>
                 <td><?=$row['tires'] ?></td>
                 <td><?=$row['pax'] ?></td>
@@ -64,8 +64,8 @@ require("../../pages/connect.php");
                 <td><?=$row['km'] ?> km</td>
                 <td>
                 <div class="mt-2">
-<button type="button" class=" border border-primary border-2 rounded-2"> <a class="text-decoration-none" href="update.php?id=<?= $row['v_id'] ?>"> Modifier le véhicule </a></button>
-<button type="button" class=" border border-danger border-2 rounded-2"> <a class="text-danger text-decoration-none" href="delete.php?id=<?= $row['v_id'] ?>"> Supprimer le véhicule </a></button>
+<button type="button" class=" border border-primary border-2 rounded-2 m-2"> <a class="text-decoration-none" href="update.php?id=<?= $row['v_id'] ?>"> Modifier le véhicule </a></button>
+<button type="button" class=" border border-danger border-2 rounded-2 m-2"> <a class="text-danger text-decoration-none" href="delete.php?id=<?= $row['v_id'] ?>"> Supprimer le véhicule </a></button>
 </div>
                 </td>
             </tr>
@@ -73,26 +73,5 @@ require("../../pages/connect.php");
     </tbody>
 </table>
 
-<?php foreach ($connexion->query($sql) as $row){ ?>
-    <div class="border border-3 border-dark rounded-2 w-50 m-2 bg-warning p-2"> 
-        <h3> Van numéro : <span class="bg-primary border rounded-2 px-2"> <?=$row['v_id'] ?> </span></h3>
-<div>        
-<span class="">Model : </span> <span class="text-primary fw-bold py-1 px-2"><?=$row['model'] ?> </span> </div>
-<div>        
-<span class="">Couleur : </span> <span class="text-primary fw-bold py-1 px-2"><?=$row['color'] ?> </span> </div>
-<div><span> Contenance du réservoir : </span> <span class="text-primary fw-bold"> <?=$row['tank'] ?> litres </span> </div>
-<div><span> Tailles des pneus :</span> <span class="text-primary fw-bold"> <?=$row['tires'] ?> </span> </div>
-<div><span> Nombres de places :</span> <span class="text-primary fw-bold"> <?=$row['pax'] ?></span> </div>
-<div><span>  ID du véhicule :</span> <span class="text-primary fw-bold"> <?=$row['v_id'] ?></span> </div>
-<div><span>  KM parcourus :</span> <span class="text-primary fw-bold"> <?=$row['km'] ?> km</span> </div>
-
-<div class="mt-2">
-<button type="button" class=" border border-primary border-2 rounded-2"> <a class="text-decoration-none" href="update.php?id=<?= $row['v_id'] ?>"> Modifier le véhicule </a></button>
-<button type="button" class=" border border-danger border-2 rounded-2"> <a class="text-danger text-decoration-none" href="delete.php?id=<?= $row['v_id'] ?>"> Supprimer le véhicule </a></button>
-</div>
-<br/>
-<br/>
-</div>
-<?php } ?>
 </body>
 </html>

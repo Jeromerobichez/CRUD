@@ -17,6 +17,8 @@ if (!empty($_POST)) {
     $stmt->execute([$id, $model, $color, $km]);
     // Output message
     $msg = 'Created Successfully!';
+    header("Location: read.php");
+        exit();
 }
 $sql2 = "SHOW COLUMNS FROM vehicles WHERE Field = 'color'";
 $stmt2 = $pdo->query($sql2);
@@ -40,7 +42,7 @@ $modelValues = $stmt3->fetchAll(PDO::FETCH_ASSOC);
     class="border border-3 border-dark rounded-2 w-50 m-2 bg-warning p-2">
 <div class="d-flex justify-content-between">
     <span>
-        <label for="model">Model</label>
+        <label for="model">Model : </label>
 </span>
 <span>
         <select name="model" id="model">
@@ -54,7 +56,7 @@ $modelValues = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="d-flex justify-content-between">
 <span>
-        <label for="color">Color</label> </span>
+        <label for="color">Color : </label> </span>
         <span>
         <select name="color" id="color">
 
@@ -66,12 +68,12 @@ $modelValues = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="d-flex justify-content-between">
             <span>
-        <label for="km">Km</label> </span>
+        <label for="km">Km : </label> </span>
         <span>
         <input type="text" name="km" placeholder="30" id="km">
         </span>
         </div>
-        <input type="submit" value="Create">
+        <input type="submit" value="Create" class="bg-success border border-2 border-dark rounded-3 p-2 m-2">
     </form>
     <?php if ($msg): ?>
     <p><?=$msg?></p>
