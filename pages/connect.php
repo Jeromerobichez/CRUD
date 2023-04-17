@@ -1,7 +1,7 @@
 <?php
 define('USER',"root");
-define('PASSWD',"");
-define('SERVER',"79.137.33.20");
+define('PASSWD',"a");
+define('SERVER', "79.137.33.20");
 define('BASE',"car_rent");
 
 function connect_bd(){
