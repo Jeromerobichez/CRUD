@@ -1,6 +1,6 @@
 <?php
 define('USER',"root");
-define('PASSWD',"a");
+define('PASSWD',"");
 define('SERVER', "79.137.33.20");
 define('BASE',"car_rent");
 
