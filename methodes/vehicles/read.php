@@ -39,14 +39,13 @@ require("../../pages/connect.php");
 
 <table class="table">
     <thead class="bg-secondary">
-        <tr>
+        <tr class="align-middle text-center">
             <th>Van numéro</th>
             <th>Model</th>
             <th>Couleur</th>
             <th>Contenance du réservoir</th>
             <th>Tailles des pneus</th>
             <th>Nombres de places</th>
-            <th>ID du véhicule</th>
             <th>KM parcourus</th>
             <th>Actions</th>
         </tr>
@@ -54,14 +53,13 @@ require("../../pages/connect.php");
     <tbody>
         <?php foreach ($connexion->query($sql) as $row){ ?>
             <tr class="align-middle text-center">
-                <td ><span class="p-2 bg-primary border border-dark border-2 rounded-2 text-light"><?=$row['v_id'] ?> </span></td>
+                <td ><span class="p-2 bg-warning border border-dark border-2 rounded-2 text-light"><?=$row['v_id'] ?> </span></td>
                 <td class=""><?=$row['model'] ?></td>
                 <td class=""><?=$row['color'] ?></td>
                 <td><?=$row['tank'] ?> litres</td>
                 <td><?=$row['tires'] ?></td>
-                <td><?=$row['pax'] ?></td>
-                <td><?=$row['v_id'] ?></td>
-                <td><?=$row['km'] ?> km</td>
+                <td><?=$row['pax'] ?> places</td>
+                <td><?=$row['km'] ?>&nbsp;km</td>
                 <td>
                 <div class="mt-2">
 <button type="button" class=" border border-primary border-2 rounded-2 m-2"> <a class="text-decoration-none" href="update.php?id=<?= $row['v_id'] ?>"> Modifier le véhicule </a></button>
