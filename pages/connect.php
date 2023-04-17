@@ -1,8 +1,10 @@
 <?php
-define('USER',"root");
-define('PASSWD',"");
-define('SERVER', "79.137.33.20");
+define('USER',"tutu");
+define('PASSWD',"tata");
+define('SERVER', "localhost");
 define('BASE',"car_rent");
+// https://www.hostinger.fr/tutoriels/creer-un-utilisateur-mysql
+
 
 function connect_bd(){
     $dsn="mysql:dbname=".BASE.";host=".SERVER;
