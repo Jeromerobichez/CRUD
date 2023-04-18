@@ -27,6 +27,7 @@ Le fonctionnement de la base de données nécessite un fichier de créer soi mê
 
 un modèle est présent dans /connectSample.php
 
+Le site a été crée sur un serveur Apache2. 
 
 
 ## Utilisation
