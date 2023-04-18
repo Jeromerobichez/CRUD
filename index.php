@@ -35,7 +35,7 @@ else{
 <h2 class="mt-5">  Modèles disponibles dans la flotte :  </h2> 
 </div>
 <div class="d-flex justify-content-center mt-4">
-<table class="border border-3 border-black w-75 ">
+<table class="border border-3 border-dark w-75 ">
   
 <tr class="bg-primary">
    <td class="border p-3 w-50 text-center"> <strong> model </strong> </td>
