@@ -35,7 +35,7 @@ else{
 <h2 class="mt-5">  Modèles disponibles dans la flotte :  </h2> 
 </div>
 <div class="d-flex justify-content-center mt-4">
-<table class="border border-3 border-dark w-75 ">
+<table class="border border-3 border-dark w-75 rounded-2 ">
   
 <tr class="bg-primary">
    <td class="border p-3 w-50 text-center"> <strong> model </strong> </td>
@@ -99,7 +99,7 @@ else{
   <div class="d-flex justify-content-center">
 <h2 class="mt-4">
   <a href="methodes/vehicles/read.php"> 
-    <button class="bg-primary border border-secondary rounded-2 p-2">
+    <button class="bg-primary border border-dark rounded-2 p-2">
      Voir la liste des véhicules existants
 </button>
   </a>
