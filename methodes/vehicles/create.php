@@ -40,6 +40,8 @@ $modelValues = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 <style>
     .bg-create{
         background-image: url('https://www.outside.fr/wp-content/uploads/2021/09/Vanlife_les-nouveaux-nomades_Les-Coflocs-1536x902.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>    
 </head>
