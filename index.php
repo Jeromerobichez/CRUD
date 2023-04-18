@@ -36,11 +36,43 @@ else{
 </div>
 <div class="d-flex justify-content-center mt-4">
 <table class="border border-3 border-black w-75 ">
-<tr class="bg-primary"> <td class="border p-3 w-50 text-center"> <strong> model </strong> </td> <td class="border p-3 w-50 text-center"> nombres de places </td></tr>
-<?php
-  foreach ($connexion->query($sql) as $row)
+  
+<tr class="bg-primary">
+   <td class="border p-3 w-50 text-center"> <strong> model </strong> </td>
+    <td class="border p-3 w-50 text-center"> nombres de places </td>
+  </tr>
 
-echo "<tr >
+
+<?php
+  foreach ($connexion->query($sql) as $row) { ?>
+  <tr>
+  <td class='border-end p-3 d-flex justify-content-center text-center'>
+<a href="pages/van-details.php?id=<?=$row['id']?>">
+ <button class='p-2 bg-light border border-secondary rounded-2'>
+<?= $row['model'] ?>
+</button>
+</a>
+</td>
+<td class='p-3 .d-inline-flex justify-content-center text-center'>
+  <?php if ($row['pax'] === 4) { ?> 
+    <span class="p-2 bg-warning border border-2 border-dark rounded-2">
+      <?=$row['pax']?>
+    </span>
+  <?php } else { ?>
+    <span class="p-2 bg-info border border-2 border-dark rounded-2">
+      <?=$row['pax']?>
+    </span>
+  <?php } ?>
+</td>
+</tr>
+
+ 
+  <?php 
+
+  } ?>
+ </table>
+</div>
+<!-- echo "<tr >
 <td class='border-end p-3 d-flex justify-content-center text-center'>
 <a href=pages/van-details.php?id=".$row['id']."> <button class='p-2 bg-light border border-secondary rounded-2'>"
 .$row['model']."
@@ -52,7 +84,7 @@ echo "<tr >
   ?>
   </table>
 </div>
-<?php } ?>
+<?php } ?> -->
 <html>
 <div class="d-flex justify-content-around border border-3 border-dark m-5">
 <h2 class="mt-2">
