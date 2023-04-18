@@ -15,9 +15,20 @@ require("../../pages/connect.php");
 <head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+<style>
+    .bg-read{
+        background-image: url('https://i.pinimg.com/550x/cd/6c/b6/cd6cb6761769f9f370c92e44d3b04ac8.jpg');
+        background-size: contain;
+        background-position: center center;
+    }
+    .bg-read-div{
+        opacity: 0.8;
+        background-color: grey;
+    }
+    </style>
 </head>
-<body>
+<body class="bg-read">
+    <div class="bg-read-div">
     <header>
        
 </header>
@@ -70,6 +81,6 @@ require("../../pages/connect.php");
         <?php } ?>
     </tbody>
 </table>
-
+        </div>
 </body>
 </html>

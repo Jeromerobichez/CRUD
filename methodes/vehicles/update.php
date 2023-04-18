@@ -35,7 +35,6 @@ FROM car_model
 
 $stmt3 = $pdo->query($sql3);
 $carValues = $stmt3->fetchAll(PDO::FETCH_ASSOC);
-var_dump($carValues[1])
 ?>
 
 <html>
@@ -44,7 +43,7 @@ var_dump($carValues[1])
 <div>
 <div>
 <?php foreach ($carValues as $value) {
-?> <div> <?php var_dump($value['model']) ?> </div>
+?> 
 <?php } ?>
 </div> 
     <h1>Modification d'un véhicule : </h1>
